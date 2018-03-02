@@ -9,17 +9,17 @@ var app = new Vue({
         gridData: [
             {
                 base: 'Decimal',
-                valid_input: '0-9',
+                valid_input: '-, 0-9',
                 range: '-9223372036854775808 - 9223372036854775807'
             },
             {
                 base: 'Hexidecimal',
-                valid_input: '0-9, a-f, A-F',
+                valid_input: '-, 0-9, a-f, A-F',
                 range: '8000000000000000 - 7fffffffffffffff'
             },
             {
                 base: 'Binary',
-                valid_input: '0-1',
+                valid_input: '-, 0-1',
                 range: '1000...000 - 0111...111'
             },
 

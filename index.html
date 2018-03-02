@@ -19,9 +19,15 @@
                     title="Number base (radix) conversion"
                     width="600"
                     trigger="click">
-                    <div id=#pop>This tools allows conversion between base 10, base 16, and base 2 representation of signed 64-bit integers. Negative values are encoded in two's compelement.
-                        For example, -5 in decimal is displayed as 'ff ff ff ff ff ff ff fb' in hex and 
-                        '11111111 11111111 11111111 11111111 11111111 11111111 11111111 11111011' in binary.
+                    <div id=#pop>This tool allows conversion between base 10, base 16, and base 2 representation of signed 64-bit integers. Negative values are encoded in two's compelement.
+                        For example, <b>-5</b> in decimal is displayed as <b>ff ff ff ff ff ff ff fb</b> in hex and 
+                        <b>11111111 11111111 11111111 11111111 11111111 11111111 11111111 11111011</b> in binary.
+                        The negation symbol <b>-</b> can be placed at the beginning of a value to compute negation.
+                        For decimal values, the symbol will simply remain. 
+                        For hex and binary, the two's complement will be computed and displayed. 
+                        The two's complement (negative) of a signed binary is computed as follows: Flip the bits and add one.
+                        For example, <b>5</b> is <b>000...000101</b> and <b>-5</b> is <b>111...111010 + 1 = 111...111011</b>.
+                        
                     </div>
                     <el-table :data="gridData">
                         <el-table-column width="150" property="base" label="Base"></el-table-column>
