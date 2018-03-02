@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+        <link rel="stylesheet" href="/styles.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <title>Radix Converter</title>
+    </head>
+    <body>
+        
+        <div id="app">
+            <div id=header>
+                <h1>Radix Converter</h1>
+            </div> 
+            <div id=main>
+                <el-popover
+                    ref="popover2"
+                    placement="right"
+                    title="Number base (radix) conversion"
+                    width="600"
+                    trigger="click">
+                    <div id=#pop>This tools allows conversion between base 10, base 16, and base 2 representation of signed 64-bit integers. Negative values are encoded in two's compelement.
+                        For example, -5 in decimal is displayed as 'ff ff ff ff ff ff ff fb' in hex and 
+                        '11111111 11111111 11111111 11111111 11111111 11111111 11111111 11111011' in binary.
+                    </div>
+                    <el-table :data="gridData">
+                        <el-table-column width="150" property="base" label="Base"></el-table-column>
+                        <el-table-column width="150" property="valid_input" label="Valid Input"></el-table-column>
+                        <el-table-column width="300" property="range" label="Range"></el-table-column>
+                    </el-table>
+                </el-popover>
+                <el-button v-on:click="random" type="primary">Random</el-button>
+                <el-button v-on:click="clear">Clear</el-button>
+                <el-button v-popover:popover2>Help</el-button>
+                <div class="container dec">
+                    <p>Decimal</p>
+                    <el-input clearable placeholder="Enter decimal value" v-model="dec"></el-input>
+                </div>
+                <div class="container hex">
+                    <p>Hex</p>
+                    <el-input clearable placeholder="Enter hexidecimal value" v-model="hex"></el-input>
+                </div>
+                <div class="container bin">
+                    <p>Binary</p>
+                    <el-input clearable placeholder="Enter binary value" v-model="bin"></el-input>
+                </div>
+                
+            </div>
+            <div id=footer>
+                    <a href=""></a>
+                    <p id=f>Made by Zach Brogan</p>
+            </div> 
+        </div>
+
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="/long.js"></script>
+    <script src="/script.js"></script>
+</html>
