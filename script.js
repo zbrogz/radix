@@ -29,20 +29,20 @@ var app = new Vue({
         dec: function() {
             if(this.dec === '-' || this.dec === '') return;
             d = Long.fromString(this.dec, true, 10);
-            this.hex = d.toString(16);
-            this.bin = d.toString(2);
+            this.hex = d.toString(16).padStart(16, '0');
+            this.bin = d.toString(2).padStart(64, '0');
         },
         hex: function() {
             if(this.hex === '-' || this.hex === '') return;
             h = Long.fromString(this.hex, true, 16);
             this.dec = h.toSigned().toString(10);
-            this.bin = h.toString(2);
+            this.bin = h.toString(2).padStart(64, '0');
         },
         bin: function() {
             if(this.bin === '-' || this.bin === '') return;
             b = Long.fromString(this.bin, true, 2);
             this.dec = b.toSigned().toString(10);
-            this.hex = b.toString(16);
+            this.hex = b.toString(16).padStart(16, '0');
         },
     },
     methods: {
